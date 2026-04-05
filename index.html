@@ -1,39 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Playlist Chicha Quechua</title>
-<style>
-body { font-family: sans-serif; text-align: center; background-color: #ffcccc; }
-h1 { color: #d92323; }
-audio { width: 80%; margin: 20px 0; }
-ul { list-style: none; padding: 0; width: 300px; margin: auto; }
-li { margin: 10px 0; cursor: pointer; background: #ffeb99; padding: 10px; border-radius: 5px; }
-li:hover { background: #ffd633; }
-</style>
+  <meta charset="UTF-8">
+  <title>Mi Radio Chicha</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #d92323;
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    #player {
+      margin: 30px auto;
+      width: 90%;
+    }
+    #playlist {
+      list-style: none;
+      padding: 0;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    #playlist li {
+      padding: 15px;
+      background: #222;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    #playlist li:hover {
+      background: #444;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Mi Playlist Chicha</h1>
+<header>🎧 Mi Radio Chicha</header>
 
-<audio id="player" controls></audio>
+<audio id="player" controls>
+  <source src="musica/cancion1.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
 
 <ul id="playlist">
-  <li data-src="musica/cancion1.mp3">Canción 1</li>
-  <li data-src="musica/cancion2.mp3">Canción 2</li>
-  <li data-src="musica/cancion3.mp3">Canción 3</li>
+  <li data-src="musica/cancion1.mp3">🎶 Canción Chicha 1</li>
+  <li data-src="musica/cancion2.mp3">🎶 Canción Chicha 2</li>
+  <li data-src="musica/cancion3.mp3">🎶 Canción Chicha 3</li>
 </ul>
 
 <script>
-const player = document.getElementById('player');
-const items = document.querySelectorAll('#playlist li');
+  const player = document.getElementById('player');
+  const list = document.querySelectorAll('#playlist li');
 
-items.forEach(item => {
-  item.addEventListener('click', () => {
-    player.src = item.getAttribute('data-src');
-    player.play();
+  list.forEach(song => {
+    song.addEventListener('click', function() {
+      player.src = this.getAttribute('data-src');
+      player.play();
+    });
   });
-});
 </script>
 
 </body>
