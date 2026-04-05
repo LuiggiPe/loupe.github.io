@@ -24,6 +24,46 @@
     <div class="centrar-texto">
         <p>Luiggi Pe es un proyecto creado para el estudio intensivo de la programación.</p>
     </div>
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Playlist Chicha Peruana</title>
+<style>
+  body { font-family: sans-serif; text-align: center; margin: 50px; }
+  audio { width: 80%; margin: 20px 0; }
+  ul { list-style: none; padding: 0; }
+  li { margin: 10px 0; cursor: pointer; color: #d92323; } /* estilo chicha */
+  li:hover { color: #ff9900; }
+</style>
+</head>
+<body>
+
+<h1>Mi Playlist Chicha</h1>
+
+<audio id="player" controls></audio>
+
+<ul id="playlist">
+  <li data-src="musica/cancion1.mp3">Canción 1</li>
+  <li data-src="musica/cancion2.mp3">Canción 2</li>
+  <li data-src="musica/cancion3.mp3">Canción 3</li>
+</ul>
+
+<script>
+  const player = document.getElementById('player');
+  const items = document.querySelectorAll('#playlist li');
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      player.src = item.getAttribute('data-src');
+      player.play();
+    });
+  });
+</script>
+
+</body>
+</html>
 </body>
 </html>
 
