@@ -1,32 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li>
-            <a href="#">Productos</a>
-            <ul class="submenu">
-                <li><a href="#">Producto 1</a></li>
-                <li><a href="#">Producto 2</a></li>
-                <li><a href="#">Producto 3</a></li>
-            </ul>
-        </li>
-        <li><a href="Servicios.html">Servicios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-
+<meta charset="UTF-8">
+<title>Playlist Chicha Quechua</title>
 <style>
-  body { font-family: sans-serif; text-align: center; margin: 50px; }
-  audio { width: 80%; margin: 20px 0; }
-  ul { list-style: none; padding: 0; }
-  li { margin: 10px 0; cursor: pointer; color: #d92323; } /* estilo chicha */
-  li:hover { color: #ff9900; }
+body { font-family: sans-serif; text-align: center; background-color: #ffcccc; }
+h1 { color: #d92323; }
+audio { width: 80%; margin: 20px 0; }
+ul { list-style: none; padding: 0; width: 300px; margin: auto; }
+li { margin: 10px 0; cursor: pointer; background: #ffeb99; padding: 10px; border-radius: 5px; }
+li:hover { background: #ffd633; }
 </style>
 </head>
 <body>
@@ -36,29 +19,22 @@
 <audio id="player" controls></audio>
 
 <ul id="playlist">
-  <li data-src="toca eelgir.mpeg">Canción 1</li>
+  <li data-src="musica/cancion1.mp3">Canción 1</li>
   <li data-src="musica/cancion2.mp3">Canción 2</li>
   <li data-src="musica/cancion3.mp3">Canción 3</li>
 </ul>
 
 <script>
-  const player = document.getElementById('player');
-  const items = document.querySelectorAll('#playlist li');
+const player = document.getElementById('player');
+const items = document.querySelectorAll('#playlist li');
 
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      player.src = item.getAttribute('data-src');
-      player.play();
-    });
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    player.src = item.getAttribute('data-src');
+    player.play();
   });
+});
 </script>
 
 </body>
-</html>
-
-
-
-
-
-        
 </html>
