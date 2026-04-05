@@ -1,3 +1,13 @@
+body {
+  background-color: #ffeb99;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #d92323;
+}
+
 header { background: #ff4500; }
 #playlist li { background: #ffeb3b; color: #000; }
 #playlist li:hover { background: #ffd700; }
